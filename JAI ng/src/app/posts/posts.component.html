@@ -1,0 +1,19 @@
+<ul class="u-listReset">
+    <li *ngFor="let post of Posts">
+       <h1> {{ post.fields.headline }} </h1>
+       <img *ngFor="let img of post.fields.media" src="{{ img.fields.file.url }}" />
+       <h2> {{ post.fields.shortContent }} </h2>
+       <time>
+         Opdateret: {{ post.sys.updatedAt | date: 'fullDate'}}
+       </time>
+    </li>
+  </ul>
+
+
+  
+
+
+
+
+
+
