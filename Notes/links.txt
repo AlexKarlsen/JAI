@@ -1,0 +1,13 @@
+Notes for development of web app
+
+Angular tutorial:
+https://angular.io/guide/quickstart
+
+Google firebase:
+https://firebase.google.com
+
+Contentful tutorial:
+https://angularfirebase.com/lessons/contentful-cms-progressive-web-apps/
+
+Materialed CSS:
+http://fullstackengine.net/create-wedding-page-angular-materialize/
