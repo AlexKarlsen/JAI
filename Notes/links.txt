@@ -9,5 +9,5 @@ https://firebase.google.com
 Contentful tutorial:
 https://angularfirebase.com/lessons/contentful-cms-progressive-web-apps/
 
-Materialed CSS:
-http://fullstackengine.net/create-wedding-page-angular-materialize/
+Material:
+https://material.angular.io/guide/getting-started
