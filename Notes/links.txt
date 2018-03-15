@@ -11,3 +11,7 @@ https://angularfirebase.com/lessons/contentful-cms-progressive-web-apps/
 
 Material:
 https://material.angular.io/guide/getting-started
+
+flexBox Guide:
+https://medium.com/letsboot/quick-start-with-angular-material-and-flex-layout-1b065aa1476c
+

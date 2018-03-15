@@ -13,13 +13,11 @@ import { ContentfulService } from '../contentful.service';
 })
 export class PostsComponent implements OnInit {
 
-  post$: Observable<any>;
-  posts$: Observable<any>;
   private Posts: Entry<any>[] = [];
-
   constructor(private contentfulService: ContentfulService ) { }
 
   ngOnInit() {
+
     //this.contentfulService.logContent('5VhDGQ8RPi4iMEcaqYQyKe');
     //this.post$ = this.contentfulService.getContent('5VhDGQ8RPi4iMEcaqYQyKe');
     //console.log(this.post$);

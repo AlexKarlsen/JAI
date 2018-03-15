@@ -1,23 +1,24 @@
 
-  <mat-grid-list  gutterSize="50px" cols="2">
-    <mat-grid-tile  *ngFor="let post of Posts">
-      <mat-card [style.border]="'1px #ddd'">
+  <mat-grid-list minWidth="100px" cols="2">
+    <mat-grid-tile *ngFor="let post of Posts">
+      <mat-card >
         <mat-card-header>
         <mat-card-title> 
-          <h1> {{ post.fields.headline }} </h1>
+          <span>{{ post.fields.headline }} </span>
         </mat-card-title>
         </mat-card-header> 
         <img style="max-width:100%" *ngFor="let img of post.fields.media" src="{{ img.fields.file.url }}" />
-        <mat-card-content> {{ post.fields.shortContent }}
-        <time>
-          Opdateret: {{ post.sys.updatedAt | date: 'fullDate'}}
-        </time>
-      </mat-card-content>
+        <mat-card-content> 
+          <span> {{ post.fields.shortContent }} </span>
+        </mat-card-content>
+        <mat-card-footer>
+          <time>
+            Opdateret: {{ post.sys.updatedAt | date: 'shortDate'}}
+          </time>
+        </mat-card-footer>
       </mat-card> 
     </mat-grid-tile>
   </mat-grid-list>
-
-
   
 
 
