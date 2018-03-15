@@ -1,7 +1,7 @@
 
-  <mat-grid-list cols="2">
-    <mat-grid-tile margin="20px" *ngFor="let post of Posts">
-      <mat-card [style.border-right]="'1px dashed #ddd'">
+  <mat-grid-list  gutterSize="50px" cols="2">
+    <mat-grid-tile  *ngFor="let post of Posts">
+      <mat-card [style.border]="'1px #ddd'">
         <mat-card-header>
         <mat-card-title> 
           <h1> {{ post.fields.headline }} </h1>
