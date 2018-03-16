@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { ContentfulService } from './contentful.service';
+import { ContentfulService } from '../services/contentful.service';
 
 @Pipe({
   name: 'mdToHtml'

@@ -4,25 +4,32 @@ import { MatGridListModule, MatCardModule, MatMenuModule, MatToolbarModule, MatI
 import { FlexLayoutModule } from "@angular/flex-layout";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
+import { AppRoutingModule }     from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PostsComponent } from './posts/posts.component';
+import { PostDetailComponent } from './post-detail/post-detail.component'
+import { HomeComponent } from './home/home.component';
 
-import { ContentfulService } from './contentful.service';
-import { MdToHtmlPipe } from './md-to-html.pipe';
+import { ContentfulService } from './services/contentful.service';
+import { DataService } from './services/data-service.service';
+import { MdToHtmlPipe } from './pipes/md-to-html.pipe';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
+    HomeComponent,
     PostsComponent,
-    MdToHtmlPipe
+    MdToHtmlPipe,
+    PostDetailComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
     MatGridListModule,
     FlexLayoutModule,
     MatCardModule,
@@ -32,7 +39,8 @@ import { MdToHtmlPipe } from './md-to-html.pipe';
     MatButtonModule
   ],
   providers: [
-    ContentfulService
+    ContentfulService,
+    DataService
   ],
   bootstrap: [AppComponent]
 })

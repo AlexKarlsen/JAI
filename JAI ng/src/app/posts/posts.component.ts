@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable'; 
-
-import { Post } from './posts';
+import {Router} from '@angular/router';
 
 import { Entry } from 'contentful';
-import { ContentfulService } from '../contentful.service';
+import { ContentfulService } from '../services/contentful.service';
+
+import { DataService } from '../services/data-service.service';
 
 @Component({
   selector: 'app-posts',
@@ -14,7 +15,8 @@ import { ContentfulService } from '../contentful.service';
 export class PostsComponent implements OnInit {
 
   private Posts: Entry<any>[] = [];
-  constructor(private contentfulService: ContentfulService ) { }
+  constructor(private contentfulService: ContentfulService, private router: Router, private dataService: DataService ) { }
+  selectedPost;
 
   ngOnInit() {
 
@@ -25,5 +27,10 @@ export class PostsComponent implements OnInit {
       .then(posts => this.Posts = posts)
       .then(posts => console.log(posts));
 
+  }
+
+  onSelect(post): void {
+    this.dataService.serviceData = post;
+    this.router.navigate(['/detail',]);
   }
 }

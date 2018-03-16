@@ -8,7 +8,7 @@ import 'rxjs/add/operator/mergeMap';
 
 import * as marked from 'marked';
 
-import { environment } from '../environments/environment';
+import { environment } from '../../environments/environment'
 
 
 

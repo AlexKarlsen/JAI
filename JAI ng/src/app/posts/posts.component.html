@@ -1,6 +1,8 @@
 
   <mat-grid-list minWidth="100px" cols="2">
-    <mat-grid-tile *ngFor="let post of Posts">
+     
+    <mat-grid-tile *ngFor="let post of Posts" [class.selected]="post === selectedPost"
+    (click)="onSelect(post)">
       <mat-card >
         <mat-card-header>
         <mat-card-title> 
@@ -20,6 +22,7 @@
     </mat-grid-tile>
   </mat-grid-list>
   
+ 
 
 
 
