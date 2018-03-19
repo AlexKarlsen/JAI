@@ -11,9 +11,9 @@ import * as marked from 'marked';
 import { environment } from '../../environments/environment'
 
 
-
 @Injectable()
 export class ContentfulService {
+
 
   //obsReturn: Rx.Observable<contentful.EntryCollection<any>>;
   private client = contentful.createClient({
@@ -35,6 +35,7 @@ export class ContentfulService {
 
   getLastByCount(number): Promise<contentful.Entry<any>[]>{
     return this.client.getEntries({
+      order: '-sys.createdAt',
       limit: number
     }).then(res => res.items)
     
@@ -44,6 +45,9 @@ export class ContentfulService {
 
   // convert markdown string to 
   markdownToHtml(md: string) {
+    var m = marked.setOptions({
+
+    })
     return marked(md);
   };
 

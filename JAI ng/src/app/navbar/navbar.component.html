@@ -1,6 +1,8 @@
 <div>
         <mat-toolbar color="primary">
-          <span><mat-icon>mood</mat-icon></span>
+          <span class="logo">
+            <img src="../../assets/JAI_logo_vektor_sk_rm.svg"/>
+          </span>
       
           <span>JAI Håndbold</span>
       
@@ -9,15 +11,9 @@
           </button>
         </mat-toolbar>
         <mat-menu x-position="before" #menu="matMenu">
-          <button mat-menu-item>Kontakt</button>
+          <a routerLink="/contact">
+            <button mat-menu-item>Kontakt</button>
+          </a>
           <button mat-menu-item>Option 2</button>
         </mat-menu>
-      
-        
-      
-        <span class="done">
-          <button mat-fab>
-            <mat-icon>check circle</mat-icon>
-          </button>
-        </span>
       </div>

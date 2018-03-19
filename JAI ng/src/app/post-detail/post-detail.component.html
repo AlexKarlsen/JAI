@@ -2,12 +2,12 @@
   <mat-card >
     <mat-card-header>
     <mat-card-title> 
-      <span>{{ post.fields.headline }} </span>
+      <h1>{{ post.fields.headline }} </h1>
     </mat-card-title>
     </mat-card-header> 
     <img style="max-width:100%" *ngFor="let img of post.fields.media" src="{{ img.fields.file.url }}" />
     <mat-card-content> 
-      <span> {{ post.fields.content }} </span>
+      <span [innerHTML]="post.fields.content | mdToHtml"> </span>
     </mat-card-content>
     <mat-card-footer>
       <time>
