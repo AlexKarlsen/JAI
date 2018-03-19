@@ -29,8 +29,7 @@ export class ContentfulService {
   };
 
   getContent(contentId) {
-    const promise = this.client.getEntry(contentId);
-    return Observable.fromPromise(promise).map(entry => entry.fields);
+    return this.client.getEntry(contentId);
   };
 
   getLastByCount(number): Promise<contentful.Entry<any>[]>{

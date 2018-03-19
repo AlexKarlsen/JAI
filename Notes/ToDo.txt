@@ -2,3 +2,4 @@ To Do
 1. Make posts.component responsive (Thomas)
 2. Develop material color theme in JAI colors (Alex)
 3. Add animations (Alex)
+4. Convert MarkDown to HTML (Alex) Done!
