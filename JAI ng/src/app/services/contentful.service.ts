@@ -34,6 +34,7 @@ export class ContentfulService {
 
   getLastByCount(number): Promise<contentful.Entry<any>[]>{
     return this.client.getEntries({
+      content_type: 'blogPosts',
       order: '-sys.createdAt',
       limit: number
     }).then(res => res.items)
