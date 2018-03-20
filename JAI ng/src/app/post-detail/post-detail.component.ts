@@ -17,24 +17,26 @@ export class PostDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute, private dataService: DataService, private contentfulService: ContentfulService) { }
 
   ngOnInit() {
-    /* //console.log(this.post);
     if (this.dataService.serviceData == null) {
       this.route.params.subscribe(params => {
         this.postId = params['id'];
-      });
-      console.log('post id: ' + this.postId);
-      this.getContent(this.postId).then(data => this.post = data);
-      
-      console.log(this.post);
+        console.log('post id: ' + this.postId);
+        this.getContent(this.postId).then(data => 
+            {
+              this.post = data;
+              console.log(this.post);
+            });
+      });  
     }
     else {
       this.post = this.dataService.serviceData;
     }
     
-  } */
-
-  //getContent(id) {
-    this.post = rx.Observable.fromPromise(this.contentfulService.getContent('4oh9hyhW8oiWqKsMIgu4Cc'));
-    console.log(this.post);
+  }
+ /*  this.route.params.subscribe(params => {
+    this.postId = params['id'];
+  });*/
+  getContent(id) {
+    return this.contentfulService.getContent(this.postId);
   }
 }

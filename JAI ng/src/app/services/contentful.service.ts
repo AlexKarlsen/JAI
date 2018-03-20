@@ -30,6 +30,11 @@ export class ContentfulService {
     return this.client.getEntry(contentId);
   };
 
+  async getContentAsync(id: string): Promise<any> {
+    const response = await this.client.getEntry(id);
+    return response.fields;
+  };
+
   getLastByCount(number): Promise<contentful.Entry<any>[]>{
     return this.client.getEntries({
       content_type: 'blogPosts',
