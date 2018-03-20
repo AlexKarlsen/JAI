@@ -14,8 +14,6 @@ import { environment } from '../../environments/environment'
 @Injectable()
 export class ContentfulService {
 
-
-  //obsReturn: Rx.Observable<contentful.EntryCollection<any>>;
   private client = contentful.createClient({
     space: environment.contentful.spaceId,
     accessToken: environment.contentful.token
@@ -38,9 +36,6 @@ export class ContentfulService {
       order: '-sys.createdAt',
       limit: number
     }).then(res => res.items)
-    
-    //return Observable.fromPromise(promise).map((collection) => 
-    //  collection.items);
   }
 
   // convert markdown string to 
