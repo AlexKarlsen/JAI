@@ -31,6 +31,6 @@ export class PostsComponent implements OnInit {
 
   onSelect(post): void {
     this.dataService.serviceData = post;
-    this.router.navigate(['/detail',]);
+    this.router.navigate(['/detail/' + post.sys.id]);
   }
 }

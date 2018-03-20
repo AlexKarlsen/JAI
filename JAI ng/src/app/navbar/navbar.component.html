@@ -1,8 +1,6 @@
 <div>
         <mat-toolbar color="primary">
-          <span class="logo">
-            <img src="../../assets/JAI_logo_vektor_sk_rm.svg"/>
-          </span>
+          <img src="../../assets/JAI_logo_vektor_sk_rm.svg" style="height: 100px"/>
       
           <span>JAI Håndbold</span>
       
@@ -11,9 +9,14 @@
           </button>
         </mat-toolbar>
         <mat-menu x-position="before" #menu="matMenu">
+          <button mat-menu-item>Holdene</button>
+          <button mat-menu-item>Begivenheder</button>
+          <button mat-menu-item>Frivillig</button>
+          <button mat-menu-item>Bestyrelsen</button>
+          <button mat-menu-item>Sponsorer</button>
           <a routerLink="/contact">
             <button mat-menu-item>Kontakt</button>
           </a>
-          <button mat-menu-item>Option 2</button>
+          <button mat-menu-item>Om JAI</button>
         </mat-menu>
       </div>
