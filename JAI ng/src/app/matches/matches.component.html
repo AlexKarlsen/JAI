@@ -1,0 +1,6 @@
+    <mat-card>
+      <mat-card-content *ngFor="let match of matches"> 
+          <time>{{ match.fields.kampdag | date: 'shortDate'}} </time>
+        <span [innerHTML]="match.fields.content | mdToHtml"> </span>
+      </mat-card-content>
+    </mat-card> 

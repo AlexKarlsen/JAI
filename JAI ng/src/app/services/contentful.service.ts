@@ -43,6 +43,19 @@ export class ContentfulService {
     }).then(res => res.items)
   }
 
+  getComingMatches(number): Promise<contentful.Entry<any>[]>{
+    var date: Date;
+    date = new Date();
+    date.setDate(date.getDate() - 1);
+      console.log(date);
+    return this.client.getEntries({
+      content_type: 'kampe',
+      'fields.kampdag[gte]': date,
+      order: 'fields.kampdag',
+      limit: number
+    }).then(res => res.items)
+  }
+
   // convert markdown string to 
   markdownToHtml(md: string) {
     var m = marked.setOptions({

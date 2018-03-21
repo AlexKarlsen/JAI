@@ -16,6 +16,7 @@ import { ContentfulService } from './services/contentful.service';
 import { DataService } from './services/data-service.service';
 import { MdToHtmlPipe } from './pipes/md-to-html.pipe';
 import { ContactComponent } from './contact/contact.component';
+import { MatchesComponent } from './matches/matches.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ContactComponent } from './contact/contact.component';
     PostsComponent,
     MdToHtmlPipe,
     PostDetailComponent,
-    ContactComponent
+    ContactComponent,
+    MatchesComponent
   ],
   imports: [
     BrowserModule,
