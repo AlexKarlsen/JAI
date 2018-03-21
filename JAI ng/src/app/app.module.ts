@@ -15,8 +15,9 @@ import { HomeComponent } from './home/home.component';
 import { ContentfulService } from './services/contentful.service';
 import { DataService } from './services/data-service.service';
 import { MdToHtmlPipe } from './pipes/md-to-html.pipe';
-import { ContactComponent } from './contact/contact.component';
 import { MatchesComponent } from './matches/matches.component';
+import { MatchesListComponent } from './matches-list/matches-list.component';
+import { InfoSitesComponent } from './info-sites/info-sites.component';
 
 
 @NgModule({
@@ -27,8 +28,9 @@ import { MatchesComponent } from './matches/matches.component';
     PostsComponent,
     MdToHtmlPipe,
     PostDetailComponent,
-    ContactComponent,
-    MatchesComponent
+    MatchesComponent,
+    MatchesListComponent,
+    InfoSitesComponent
   ],
   imports: [
     BrowserModule,

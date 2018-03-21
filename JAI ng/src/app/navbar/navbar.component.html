@@ -1,7 +1,8 @@
 <div>
         <mat-toolbar color="primary">
+          <a routerLink="/home">
           <img src="../../assets/JAI_logo_vektor_sk_rm.svg" style="height: 100px"/>
-      
+          </a>
           <span>JAI Håndbold</span>
       
           <button mat-icon-button [mat-menu-trigger-for]="menu">
@@ -13,10 +14,15 @@
           <button mat-menu-item>Begivenheder</button>
           <button mat-menu-item>Frivillig</button>
           <button mat-menu-item>Bestyrelsen</button>
-          <button mat-menu-item>Sponsorer</button>
-          <a routerLink="/contact">
+          <a routerLink="/info/sponsors"> 
+            <button mat-menu-item>Sponsorer</button>
+          </a>
+          <a routerLink="/info/contact">
             <button mat-menu-item>Kontakt</button>
           </a>
-          <button mat-menu-item>Om JAI</button>
+          <a routerLink="/info/about">
+              <button mat-menu-item>Om JAI</button>
+          </a>
+          
         </mat-menu>
       </div>

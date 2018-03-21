@@ -43,7 +43,7 @@ export class ContentfulService {
     }).then(res => res.items)
   }
 
-  getComingMatches(number): Promise<contentful.Entry<any>[]>{
+  getComingMatchesByNumber(number): Promise<contentful.Entry<any>[]>{
     var date: Date;
     date = new Date();
     date.setDate(date.getDate() - 1);
@@ -53,6 +53,18 @@ export class ContentfulService {
       'fields.kampdag[gte]': date,
       order: 'fields.kampdag',
       limit: number
+    }).then(res => res.items)
+  }
+
+  getComingMatches(): Promise<contentful.Entry<any>[]>{
+    var date: Date;
+    date = new Date();
+    date.setDate(date.getDate() - 1);
+      console.log(date);
+    return this.client.getEntries({
+      content_type: 'kampe',
+      'fields.kampdag[gte]': date,
+      order: 'fields.kampdag',
     }).then(res => res.items)
   }
 
