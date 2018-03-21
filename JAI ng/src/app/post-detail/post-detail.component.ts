@@ -4,39 +4,31 @@ import { DataService } from '../services/data-service.service'
 import { ContentfulService } from '../services/contentful.service';
 import * as rx from 'rxjs/Observable';
 
-
 @Component({
   selector: 'app-post-detail',
   templateUrl: './post-detail.component.html',
   styleUrls: ['./post-detail.component.css']
 })
+
 export class PostDetailComponent implements OnInit {
-  post;
-  postId: string;
+  private post: any;
 
   constructor(private route: ActivatedRoute, private dataService: DataService, private contentfulService: ContentfulService) { }
 
   ngOnInit() {
+    // If the app is loaded here, the serviceData will be null, hence the post must be fetched.
     if (this.dataService.serviceData == null) {
+      // Get the id from Url path
       this.route.params.subscribe(params => {
-        this.postId = params['id'];
-        console.log('post id: ' + this.postId);
-        this.getContent(this.postId).then(data => 
-            {
-              this.post = data;
-              console.log(this.post);
-            });
-      });  
+        // Get the contentful entry by the id
+        this.contentfulService.getContent(params['id']).then(data => {
+          this.post = data;
+        });
+      });
     }
     else {
+      // Get passed on data from DataService
       this.post = this.dataService.serviceData;
     }
-    
-  }
- /*  this.route.params.subscribe(params => {
-    this.postId = params['id'];
-  });*/
-  getContent(id) {
-    return this.contentfulService.getContent(this.postId);
   }
 }

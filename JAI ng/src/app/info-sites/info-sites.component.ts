@@ -10,16 +10,17 @@ import { ActivatedRoute } from '@angular/router';
 
 export class InfoSitesComponent implements OnInit {
 
-  siteName;
-  data;
-  param;
 
+  private data: any;
+  private param: string;
 
   constructor(private contentfulService: ContentfulService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    // Getting the path from the Url
     this.route.params.subscribe(params => {
-      this.param = this.getContentId(params['site'])
+      this.param = this.getContentId(params['site']);
+      // Getting contentful entry 
       this.getContent(this.param).then(data => {
         this.data = data;
         console.log(data);
@@ -27,13 +28,13 @@ export class InfoSitesComponent implements OnInit {
     });
   }
 
-
-
-  getContent(id) {
+  private getContent(id) {
     return this.contentfulService.getContent(id);
   }
 
-  getContentId(siteName) {
+  // Violating O/C principal, might need to implement strategy pattern
+  /** Get entry id of content stored in enum*/
+  private getContentId(siteName) {
     switch (siteName) {
       case 'contact': {
         return Sites.contact;
@@ -51,6 +52,7 @@ export class InfoSitesComponent implements OnInit {
   }
 }
 
+/** Enumeration of contentful entry id's on completely static pages */
 enum Sites {
   contact = "4oh9hyhW8oiWqKsMIgu4Cc",
   about = "1ZEdBUVLhusIsei8ikaOes",

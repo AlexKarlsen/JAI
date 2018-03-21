@@ -2,7 +2,7 @@
   <mat-card-content>
     <div *ngFor="let match of matches">
       <time>{{ match.fields.kampdag | date: 'shortDate'}} </time>
-      <span [innerHTML]="match.fields.content | mdToHtml"> </span>
+      <span class="matches" [innerHTML]="match.fields.content | mdToHtml"> </span>
     </div>
     <button>
       <a routerLink="/matches">

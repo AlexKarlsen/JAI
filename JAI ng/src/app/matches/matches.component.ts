@@ -8,13 +8,14 @@ import { ContentfulService } from '../services/contentful.service';
 })
 export class MatchesComponent implements OnInit {
 
-  matches;
+  private matches: any;
 
   constructor(private contentfulService: ContentfulService) { }
 
   ngOnInit() {
+    // Getting the two coming matches
     this.contentfulService.getComingMatchesByNumber(2)
-      .then(data => this.matches = data).then(s => console.log(s));
+      .then(data => this.matches = data);
   }
 
 
