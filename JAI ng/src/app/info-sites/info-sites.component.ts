@@ -45,6 +45,9 @@ export class InfoSitesComponent implements OnInit {
       case 'sponsors': {
         return Sites.sponsors;
       }
+      case 'board': {
+        return Sites.board;
+      }
       default: {
         return Sites.notFound;
       }
@@ -57,5 +60,6 @@ enum Sites {
   contact = "4oh9hyhW8oiWqKsMIgu4Cc",
   about = "1ZEdBUVLhusIsei8ikaOes",
   sponsors = "9pW7aCzgKQ6OECA2cESsU",
+  board = "5B4eqnVfLU8KQmmO8qSQK2",
   notFound = "4WGGwt4zMsSIGqMyAUyAEc"
 }

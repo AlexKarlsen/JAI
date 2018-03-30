@@ -10,10 +10,18 @@
           </button>
         </mat-toolbar>
         <mat-menu x-position="before" #menu="matMenu">
-          <button mat-menu-item>Holdene</button>
-          <button mat-menu-item>Begivenheder</button>
-          <button mat-menu-item>Frivillig</button>
-          <button mat-menu-item>Bestyrelsen</button>
+          <a routerLink="/info/teams"> 
+            <button mat-menu-item>Holdene</button>
+          </a>
+          <a routerLink="/events"> 
+            <button mat-menu-item>Begivenheder</button>
+          </a>
+          <a routerLink="/info/volunteer"> 
+            <button mat-menu-item>Frivillig</button>
+          </a>
+          <a routerLink="/info/board"> 
+            <button mat-menu-item>Bestyrelsen</button>
+          </a>
           <a routerLink="/info/sponsors"> 
             <button mat-menu-item>Sponsorer</button>
           </a>
