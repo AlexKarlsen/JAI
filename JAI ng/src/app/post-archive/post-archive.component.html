@@ -1,8 +1,4 @@
-<mat-grid-list minWidth="100px" cols="1">
-     
-  <mat-grid-tile *ngFor="let post of posts" [class.selected]="post === selectedPost"
-  (click)="onSelect(post)">
-    <mat-card >
+     <mat-card *ngFor="let post of posts" [class.selected]="post === selectedPost" (click)="onSelect(post)">
       <mat-card-header>
       <mat-card-title> 
         <span>{{ post.fields.headline }} </span>
@@ -18,6 +14,7 @@
         </time>
       </mat-card-footer>
     </mat-card> 
-  </mat-grid-tile>
-</mat-grid-list>
-<!--<button (click)="loadMore()">Hent 10 mere</button>-->
+    <div *ngIf="!noMore; else elseBlock">
+      <button (click)="loadMore()" [hidden]="noMore">Hent {{ LOAD_COUNT_NUMBER }} mere</button>
+    </div>
+    <ng-template #elseBlock>Der er ikke flere nyheder i arkiv</ng-template>

@@ -33,7 +33,7 @@ export class ContentfulService {
   };
 
   /** Get a number of entries */
-  public getLastByCount(count?: number, skipCount = 0): Promise<contentful.Entry<any>[]> {
+  public getLastByCount(count?: number, skipCount?: number): Promise<contentful.Entry<any>[]> {
     return this.client.getEntries({
       content_type: 'blogPosts',
       order: '-sys.createdAt',

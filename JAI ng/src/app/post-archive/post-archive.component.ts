@@ -3,16 +3,17 @@ import { ContentfulService } from '../services/contentful.service';
 import { DataService } from '../services/data-service.service';
 import { Router } from '@angular/router';
 
-const LOAD_COUNT_NUMBER = 10;
+
 @Component({
   selector: 'app-post-archive',
   templateUrl: './post-archive.component.html',
   styleUrls: ['./post-archive.component.css']
 })
 export class PostArchiveComponent implements OnInit {
-
+  LOAD_COUNT_NUMBER = 10;
   posts: Array<any>;
-  loadCount: number = LOAD_COUNT_NUMBER;
+  loadCount: number = this.LOAD_COUNT_NUMBER;
+  noMore: Boolean = false;
 
   constructor(
     private contentfulService: ContentfulService, 
@@ -21,17 +22,25 @@ export class PostArchiveComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.contentfulService.getLastByCount()
+    this.contentfulService.getLastByCount(this.LOAD_COUNT_NUMBER)
       .then(posts => this.posts = posts);
-    this.loadCount += LOAD_COUNT_NUMBER;
+    
   };
-  /* loadMore() {
-    this.contentfulService.getLastByCount(this.loadCount, LOAD_COUNT_NUMBER)
-      .then(posts => this.posts = posts);
-    console.log(this.loadCount);
-    console.log("ArraySize: " + this.posts.length);
-    this.loadCount += LOAD_COUNT_NUMBER;
-  } */
+
+  loadMore() {
+    if(this.posts.length != this.LOAD_COUNT_NUMBER){
+      this.noMore = true;
+    } 
+      this.contentfulService.getLastByCount(this.LOAD_COUNT_NUMBER, this.loadCount)
+        .then(posts => posts.forEach(post => this.posts.push(post)));
+      this.loadCount += this.LOAD_COUNT_NUMBER;
+        
+  }
+
+  isValid(){
+    return false;
+  }
+
   onSelect(post): void {
     // Save the data to pass onto the post-detail component
     this.dataService.serviceData = post;
