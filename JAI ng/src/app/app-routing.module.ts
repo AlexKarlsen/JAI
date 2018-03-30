@@ -6,6 +6,7 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
 import { HomeComponent } from './home/home.component';
 import { MatchesListComponent } from './matches-list/matches-list.component';
 import { InfoSitesComponent } from './info-sites/info-sites.component';
+import { PostArchiveComponent } from './post-archive/post-archive.component';
 
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'detail/:id', component: PostDetailComponent },
   { path: 'matches', component: MatchesListComponent},
-  { path: 'info/:site', component: InfoSitesComponent}
+  { path: 'info/:site', component: InfoSitesComponent},
+  { path: 'newsarchive', component: PostArchiveComponent }
 ];
 
 @NgModule({

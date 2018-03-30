@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable'; 
 import {Router} from '@angular/router';
 
-import { Entry } from 'contentful';
+//import { Entry } from 'contentful';
 import { ContentfulService } from '../services/contentful.service';
 
 import { DataService } from '../services/data-service.service';
@@ -14,7 +14,7 @@ import { DataService } from '../services/data-service.service';
 })
 export class PostsComponent implements OnInit {
 
-  private Posts: Entry<any>[] = [];
+  private Posts: any;
   constructor(
     private contentfulService: ContentfulService, 
     private router: Router, 

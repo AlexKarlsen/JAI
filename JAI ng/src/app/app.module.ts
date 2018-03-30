@@ -21,6 +21,7 @@ import { EventComponent } from './event/event.component';
 import { ContentfulService } from './services/contentful.service';
 import { DataService } from './services/data-service.service';
 import { FacebookAppService } from './services/facebook-app.service';
+import { PostArchiveComponent } from './post-archive/post-archive.component';
 
 
 
@@ -36,7 +37,8 @@ import { FacebookAppService } from './services/facebook-app.service';
     MatchesComponent,
     MatchesListComponent,
     InfoSitesComponent,
-    EventComponent
+    EventComponent,
+    PostArchiveComponent
   ],
   imports: [
     BrowserModule,
