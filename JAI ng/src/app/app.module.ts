@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MatGridListModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule, MatButtonModule } from '@angular/material';
 import { FlexLayoutModule } from "@angular/flex-layout";
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FacebookModule } from 'ngx-facebook';
 
 import { AppRoutingModule }     from './app-routing.module';
 
@@ -11,13 +12,18 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { PostsComponent } from './posts/posts.component';
 import { PostDetailComponent } from './post-detail/post-detail.component'
 import { HomeComponent } from './home/home.component';
-
-import { ContentfulService } from './services/contentful.service';
-import { DataService } from './services/data-service.service';
 import { MdToHtmlPipe } from './pipes/md-to-html.pipe';
 import { MatchesComponent } from './matches/matches.component';
 import { MatchesListComponent } from './matches-list/matches-list.component';
 import { InfoSitesComponent } from './info-sites/info-sites.component';
+import { EventComponent } from './event/event.component';
+
+import { ContentfulService } from './services/contentful.service';
+import { DataService } from './services/data-service.service';
+import { FacebookAppService } from './services/facebook-app.service';
+import { PostArchiveComponent } from './post-archive/post-archive.component';
+
+
 
 
 @NgModule({
@@ -30,7 +36,9 @@ import { InfoSitesComponent } from './info-sites/info-sites.component';
     PostDetailComponent,
     MatchesComponent,
     MatchesListComponent,
-    InfoSitesComponent
+    InfoSitesComponent,
+    EventComponent,
+    PostArchiveComponent
   ],
   imports: [
     BrowserModule,
@@ -42,11 +50,13 @@ import { InfoSitesComponent } from './info-sites/info-sites.component';
     MatMenuModule,
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    FacebookModule.forRoot()
   ],
   providers: [
     ContentfulService,
-    DataService
+    DataService,
+    FacebookAppService
   ],
   bootstrap: [AppComponent]
 })
