@@ -1,20 +1,25 @@
+     <div class="containerX" fxLayout="column" fxLayoutAlign="space-around">
      <mat-card *ngFor="let post of posts" [class.selected]="post === selectedPost" (click)="onSelect(post)">
       <mat-card-header>
-      <mat-card-title> 
-        <span>{{ post.fields.headline }} </span>
-      </mat-card-title>
-      </mat-card-header> 
-      <!--<img style="max-width:100%" *ngFor="let img of post.fields.media" src="{{ img.fields.file.url }}" />-->
-      <mat-card-content> 
-        <span> {{ post.fields.shortContent }} </span>
-      </mat-card-content>
-      <mat-card-footer>
-        <time>
-          Opdateret: {{ post.sys.updatedAt | date: 'shortDate'}}
-        </time>
-      </mat-card-footer>
+
+        <mat-card-title>
+            <span>{{ post.fields.headline }} </span>
+        </mat-card-title>
+          <img mat-card-avatar *ngFor="let img of post.fields.media" src="{{ img.fields.file.url }}" />
+          <mat-card-subtitle>
+              <time>
+                  Opdateret: {{ post.sys.updatedAt | date: 'shortDate'}}
+                </time>
+          </mat-card-subtitle>
+        </mat-card-header>
+        
+
     </mat-card> 
-    <div *ngIf="!noMore; else elseBlock">
-      <button mat-button (click)="loadMore()" [hidden]="noMore">Hent {{ LOAD_COUNT_NUMBER }} mere</button>
-    </div>
+    
     <ng-template #elseBlock>Der er ikke flere nyheder i arkiv</ng-template>
+  </div>
+<div class="container">
+  <div *ngIf="!noMore; else elseBlock">
+    <button mat-button (click)="loadMore()" [hidden]="noMore">Hent {{ LOAD_COUNT_NUMBER }} mere</button>
+  </div>
+</div>
