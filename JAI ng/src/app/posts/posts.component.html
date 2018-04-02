@@ -1,31 +1,11 @@
-
-  <mat-grid-list minWidth="100px" cols="2">
-     
-    <mat-grid-tile *ngFor="let post of Posts" [class.selected]="post === selectedPost"
-    (click)="onSelect(post)">
-      <mat-card >
-        <mat-card-header>
-        <mat-card-title> 
-          <span>{{ post.fields.headline }} </span>
-        </mat-card-title>
-        </mat-card-header> 
-        <img style="max-width:100%" *ngFor="let img of post.fields.media" src="{{ img.fields.file.url }}" />
-        <mat-card-content> 
-          <span> {{ post.fields.shortContent }} </span>
-        </mat-card-content>
-        <mat-card-footer>
-          <time>
-            Opdateret: {{ post.sys.updatedAt | date: 'shortDate'}}
-          </time>
-        </mat-card-footer>
-      </mat-card> 
-    </mat-grid-tile>
-  </mat-grid-list>
-  
- 
-
-
-
-
-
-
+<div class="card-container">
+  <div class="card" *ngFor="let post of Posts" [class.selected]="post === selectedPost"
+  (click)="onSelect(post)">
+    <p class="card-headline">{{post.fields.headline}}</p>
+    <img *ngFor="let img of post.fields.media" src="{{ img.fields.file.url }}" alt="">
+    <div class="card-text">
+        <p>{{post.fields.shortContent}}</p>
+    </div>
+    <button>Læs artikel</button>
+  </div>
+</div>
