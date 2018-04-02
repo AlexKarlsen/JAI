@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatGridListModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule, MatButtonModule } from '@angular/material';
+import { MatGridListModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule, MatButtonModule, MatListModule } from '@angular/material';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FacebookModule } from 'ngx-facebook';
@@ -51,6 +51,7 @@ import { PostArchiveComponent } from './post-archive/post-archive.component';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    MatListModule,
     FacebookModule.forRoot()
   ],
   providers: [

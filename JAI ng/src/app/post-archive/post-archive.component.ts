@@ -23,7 +23,7 @@ export class PostArchiveComponent implements OnInit {
 
   ngOnInit() {
     this.contentfulService.getLastByCount(this.LOAD_COUNT_NUMBER)
-      .then(posts => this.posts = posts);
+      .then(posts => this.posts = posts).then( x=> {if(x.length != this.LOAD_COUNT_NUMBER){this.noMore = true }});
     
   };
 
