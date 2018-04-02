@@ -4,6 +4,7 @@ import { MatGridListModule, MatCardModule, MatMenuModule, MatToolbarModule, MatI
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FacebookModule } from 'ngx-facebook';
+import { AgmCoreModule } from '@agm/core';
 
 import { AppRoutingModule }     from './app-routing.module';
 
@@ -23,8 +24,7 @@ import { DataService } from './services/data-service.service';
 import { FacebookAppService } from './services/facebook-app.service';
 import { PostArchiveComponent } from './post-archive/post-archive.component';
 
-
-
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -52,7 +52,10 @@ import { PostArchiveComponent } from './post-archive/post-archive.component';
     MatIconModule,
     MatButtonModule,
     MatListModule,
-    FacebookModule.forRoot()
+    FacebookModule.forRoot(),
+    AgmCoreModule.forRoot({
+      apiKey: environment.maps.apiKey
+    })
   ],
   providers: [
     ContentfulService,

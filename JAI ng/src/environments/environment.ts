@@ -9,6 +9,9 @@ export const environment = {
   contentful: {
     spaceId: '7ur4ms65ukh6',
     token: 'a28d06bcfba18e59ce562c91420ba7a89f10f331d793c69fe9e300d46678275e'
+  },
+  maps: {
+    apiKey: 'AIzaSyBS7rSdqQLrPGSe4smc0Roz4nhrocm_744'
   }
 };
 

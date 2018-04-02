@@ -8,6 +8,9 @@ import { PostsComponent } from '../posts/posts.component';
 })
 export class HomeComponent implements OnInit {
 
+  latitude: number = 56.1776591;
+  longitude: number =  10.2095014;
+
   constructor() { }
 
   ngOnInit() {

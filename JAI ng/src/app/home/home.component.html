@@ -1,2 +1,12 @@
 <app-posts></app-posts>
 <app-matches></app-matches>
+<mat-card>
+    <agm-map [longitude]="longitude" [latitude]="latitude" [zoom]="12">
+        <agm-marker [longitude]="longitude" [latitude]="latitude">
+            <agm-info-window [isOpen]="true">
+                <h3>Annexhallen</h3>
+                <p>Bethesdasvej 29, 8200 Aarhus N</p>
+            </agm-info-window>
+        </agm-marker>
+    </agm-map>
+</mat-card>
