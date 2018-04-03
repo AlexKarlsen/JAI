@@ -67,6 +67,14 @@ export class ContentfulService {
     }).then(res => res.items)
   };
 
+  public getBoardMembers(): Promise<contentful.Entry<any>[]> {
+    return this.client.getEntries({
+      content_type: 'bestyrelsesmedlem',
+      order: 'sys.createdAt',
+      limit: 10,
+    }).then(res => res.items)
+  }
+
   /** Helper function to convert markdown to html. It is called by the pipe */
   public markdownToHtml(md: string) {
     var m = marked.setOptions({

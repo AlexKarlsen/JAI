@@ -1,8 +1,11 @@
 <mat-card>
-    <mat-card-content>
-      <div *ngFor="let match of matches">
-        <time>{{ match.fields.kampdag | date: 'shortDate'}} </time>
-        <span [innerHTML]="match.fields.content | mdToHtml"> </span>
-      </div>
-    </mat-card-content>
+    <mat-card-title>
+      Kommende kampe
+    </mat-card-title>
+    <div *ngFor="let match of matches">
+      <mat-card-subtitle>
+        <time>{{ match.fields.kampdag | date: 'dd/MM/yyyy'}} </time>
+      </mat-card-subtitle>
+      <mat-card-content [innerHTML]="match.fields.content | mdToHtml"></mat-card-content>
+    </div>
   </mat-card>

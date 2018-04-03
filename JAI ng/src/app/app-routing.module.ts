@@ -8,11 +8,13 @@ import { MatchesListComponent } from './matches-list/matches-list.component';
 import { InfoSitesComponent } from './info-sites/info-sites.component';
 import { PostArchiveComponent } from './post-archive/post-archive.component';
 import { EventComponent } from './event/event.component';
+import { BoardComponent } from './board/board.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
+  { path: 'board', component: BoardComponent },
   { path: 'detail/:id', component: PostDetailComponent },
   { path: 'matches', component: MatchesListComponent},
   { path: 'info/:site', component: InfoSitesComponent},

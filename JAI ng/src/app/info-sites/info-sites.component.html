@@ -1,3 +1,5 @@
 <div *ngIf="data">
-    <div [innerHTML]="data.fields.content | mdToHtml">></div>
-  </div>
+  <mat-card>
+    <div class="markdown" [innerHTML]="data.fields.content | mdToHtml"></div>
+  </mat-card>
+</div>

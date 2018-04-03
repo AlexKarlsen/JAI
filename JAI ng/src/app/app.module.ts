@@ -25,6 +25,7 @@ import { FacebookAppService } from './services/facebook-app.service';
 import { PostArchiveComponent } from './post-archive/post-archive.component';
 
 import { environment } from '../environments/environment';
+import { BoardComponent } from './board/board.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { environment } from '../environments/environment';
     MatchesListComponent,
     InfoSitesComponent,
     EventComponent,
-    PostArchiveComponent
+    PostArchiveComponent,
+    BoardComponent
   ],
   imports: [
     BrowserModule,

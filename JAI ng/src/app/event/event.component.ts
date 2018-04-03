@@ -11,7 +11,7 @@ export class EventComponent implements OnInit {
   constructor(private fb: FacebookAppService) { }
 
   ngOnInit() {
-    this.fb.GetEvents('412977102476743');
+    //this.fb.GetEvents('412977102476743');
   }
 
 }
