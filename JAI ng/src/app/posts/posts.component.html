@@ -1,11 +1,13 @@
 <div class="card-container">
-  <div class="card" *ngFor="let post of Posts" [class.selected]="post === selectedPost"
+  <mat-card *ngFor="let post of Posts" [class.selected]="post === selectedPost"
   (click)="onSelect(post)">
-    <p class="card-headline">{{post.fields.headline}}</p>
-    <img *ngFor="let img of post.fields.media" src="{{ img.fields.file.url }}" alt="">
-    <div class="card-text">
+    <mat-card-title>{{post.fields.headline}}</mat-card-title>
+    <img mat-card-image *ngFor="let img of post.fields.media" src="{{ img.fields.file.url }}" alt="">
+    <mat-card-content>
         <p>{{post.fields.shortContent}}</p>
-    </div>
-    <button>Læs artikel</button>
-  </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button >Læs artikel</button>
+    </mat-card-actions>
+  </mat-card>
 </div>

@@ -26,6 +26,8 @@ import { PostArchiveComponent } from './post-archive/post-archive.component';
 
 import { environment } from '../environments/environment';
 import { BoardComponent } from './board/board.component';
+import { VolunteerComponent } from './volunteer/volunteer.component';
+import { SponsorsComponent } from './sponsors/sponsors.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { BoardComponent } from './board/board.component';
     InfoSitesComponent,
     EventComponent,
     PostArchiveComponent,
-    BoardComponent
+    BoardComponent,
+    VolunteerComponent,
+    SponsorsComponent
   ],
   imports: [
     BrowserModule,

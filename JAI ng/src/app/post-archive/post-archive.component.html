@@ -1,22 +1,22 @@
 <div class="containerX" fxLayout="column" fxLayoutAlign="space-around">
-        <mat-list>
-          <mat-list-item class="posts" *ngFor="let post of posts" [class.selected]="post === selectedPost" (click)="onSelect(post)">
-            <span matLine >{{ post.fields.headline }} </span>
-          <img matListAvatar *ngFor="let img of post.fields.media" src="{{ img.fields.file.url }}" />
-              <time matLine>
-                  Opdateret: {{ post.sys.updatedAt | date: 'shortDate'}}
-                </time>
+  <mat-list>
+    <mat-list-item class="posts" *ngFor="let post of posts" [class.selected]="post === selectedPost" (click)="onSelect(post)">
+      <span matLine>{{ post.fields.headline }} </span>
+      <img matListAvatar *ngFor="let img of post.fields.media" src="{{ img.fields.file.url }}" />
+      <time matLine>
+        Opdateret: {{ post.sys.updatedAt | date: 'shortDate'}}
+      </time>
 
-  </mat-list-item>
-  
+    </mat-list-item>
+
 
     <ng-template #elseBlock>Der er ikke flere nyheder i arkiv</ng-template>
 
 
-  <div *ngIf="!noMore; else elseBlock">
-    <button mat-button (click)="loadMore()" [hidden]="noMore">Hent {{ LOAD_COUNT_NUMBER }} mere</button>
-  </div>
+    <div *ngIf="!noMore; else elseBlock">
+      <button mat-button (click)="loadMore()" [hidden]="noMore">Hent {{ LOAD_COUNT_NUMBER }} mere</button>
+    </div>
 
 
-</mat-list> 
-</div>   
+  </mat-list>
+</div>

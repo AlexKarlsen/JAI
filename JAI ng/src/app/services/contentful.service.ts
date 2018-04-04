@@ -75,6 +75,23 @@ export class ContentfulService {
     }).then(res => res.items)
   }
 
+  public getVolunteerWork(): Promise<contentful.Entry<any>[]> {
+    var date: Date;
+    date = new Date();
+    date.setDate(date.getDate() - 1);
+    return this.client.getEntries({
+      content_type: 'frivilligArbejde',
+      'fields.endDate[gte]': date,
+      order: '-fields.endDate'
+    }).then(res => res.items)
+  }
+
+  public getSponsors(): Promise<contentful.Entry<any>[]> {
+    return this.client.getEntries({
+      content_type: 'sponsors'
+    }).then(res => res.items)
+  }
+
   /** Helper function to convert markdown to html. It is called by the pipe */
   public markdownToHtml(md: string) {
     var m = marked.setOptions({

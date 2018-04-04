@@ -1,0 +1,21 @@
+<mat-card class="volunteerWork" *ngFor="let work of volunteerWork">
+  <mat-card-title>{{ work.fields.name }}</mat-card-title>
+  <mat-card-subtitle>
+      <time>
+          <span *ngIf="work.fields.startDate">{{ work.fields.startDate | date: 'dd/MM/yyyy'}} - </span>
+          {{ work.fields.endDate | date: 'dd/MM/yyyy'}} 
+        </time>
+  </mat-card-subtitle>
+  <mat-card-content>
+    <img *ngFor="let img of work.fields.media" src="{{ img.fields.file.url }}" />
+    <span *ngIf="work.fields.content" [innerHTML]="work.fields.content | mdToHtml"></span>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button>
+      <a matline href="{{work.fields.signUpUrl}}">Tilmeld dig her!</a>
+    </button>
+    <button mat-raised-button>
+        <a matline href="{{work.fields.participantUrl}}">Se listen over tilmeldte</a>
+      </button>
+  </mat-card-actions>
+</mat-card>
