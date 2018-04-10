@@ -6,7 +6,7 @@ import 'rxjs/add/observable/from';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
 
-import * as marked from 'marked';
+import { MarkdownService } from 'ngx-md';
 
 import { environment } from '../../environments/environment'
 
@@ -91,13 +91,5 @@ export class ContentfulService {
       content_type: 'sponsors'
     }).then(res => res.items)
   }
-
-  /** Helper function to convert markdown to html. It is called by the pipe */
-  public markdownToHtml(md: string) {
-    var m = marked.setOptions({
-
-    })
-    return marked(md);
-  };
 
 }

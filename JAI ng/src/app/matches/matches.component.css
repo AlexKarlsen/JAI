@@ -1,2 +1,9 @@
-.matches {
+mat-card{
+    max-width: 500px;
+    text-align: left
 }
+table{
+    text-align: left
+ }
+
+

@@ -1,4 +1,4 @@
-<div class="containerX" fxLayout="column" fxLayoutAlign="space-around">
+
   <mat-list>
     <mat-list-item class="posts" *ngFor="let post of posts" [class.selected]="post === selectedPost" (click)="onSelect(post)">
       <span matLine>{{ post.fields.headline }} </span>
@@ -19,4 +19,3 @@
 
 
   </mat-list>
-</div>

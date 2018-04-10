@@ -5,6 +5,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FacebookModule } from 'ngx-facebook';
 import { AgmCoreModule } from '@agm/core';
+import { MarkdownModule } from 'ngx-md';
 
 import { AppRoutingModule }     from './app-routing.module';
 
@@ -13,10 +14,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { PostsComponent } from './posts/posts.component';
 import { PostDetailComponent } from './post-detail/post-detail.component'
 import { HomeComponent } from './home/home.component';
-import { MdToHtmlPipe } from './pipes/md-to-html.pipe';
 import { MatchesComponent } from './matches/matches.component';
 import { MatchesListComponent } from './matches-list/matches-list.component';
-import { InfoSitesComponent } from './info-sites/info-sites.component';
 import { EventComponent } from './event/event.component';
 
 import { ContentfulService } from './services/contentful.service';
@@ -28,6 +27,7 @@ import { environment } from '../environments/environment';
 import { BoardComponent } from './board/board.component';
 import { VolunteerComponent } from './volunteer/volunteer.component';
 import { SponsorsComponent } from './sponsors/sponsors.component';
+import { StartGuideComponent } from './start-guide/start-guide.component';
 
 @NgModule({
   declarations: [
@@ -35,16 +35,15 @@ import { SponsorsComponent } from './sponsors/sponsors.component';
     NavbarComponent,
     HomeComponent,
     PostsComponent,
-    MdToHtmlPipe,
     PostDetailComponent,
     MatchesComponent,
     MatchesListComponent,
-    InfoSitesComponent,
     EventComponent,
     PostArchiveComponent,
     BoardComponent,
     VolunteerComponent,
-    SponsorsComponent
+    SponsorsComponent,
+    StartGuideComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +60,8 @@ import { SponsorsComponent } from './sponsors/sponsors.component';
     FacebookModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: environment.maps.apiKey
-    })
+    }),
+    MarkdownModule.forRoot()
   ],
   providers: [
     ContentfulService,

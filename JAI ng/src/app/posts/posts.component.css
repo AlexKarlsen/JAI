@@ -9,9 +9,9 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   align-content: center;
-  background-color: #009688;
-  background: linear-gradient(45deg, #009688, #4DB6AC);
-  padding: 10px;
+  padding-left: 40px;
+  padding-right: 40px; 
+  
 }
 
 .card-container > div {
@@ -22,6 +22,7 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 5px;
   overflow: hidden;
+  justify-self: stretch;
 }
 
 img {
@@ -39,6 +40,20 @@ img {
   margin: 8px 16px 8px 16px;
   height: 95px;
   overflow: hidden;
+}
+
+mat-card {
+  width: 100%
+}
+mat-card-title {
+  height: 30%
+}
+mat-card img{
+  object-fit: cover; /*this makes de image in src fit to the size of specified below*/
+  width: 100%; /* Here you can use wherever you want to specify the width and also the height of the <img>*/
+}
+mat-card-actions{
+  height: 30%;
 }
 
 /*button {
