@@ -11,6 +11,8 @@ import { BoardComponent } from './board/board.component';
 import { VolunteerComponent } from './volunteer/volunteer.component';
 import { SponsorsComponent } from './sponsors/sponsors.component';
 import { StartGuideComponent } from './start-guide/start-guide.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 const routes: Routes = [
@@ -23,7 +25,9 @@ const routes: Routes = [
   { path: 'events', component: EventComponent },
   { path: 'volunteer', component: VolunteerComponent },
   { path: 'sponsors', component: SponsorsComponent },
-  { path: 'start-guide', component: StartGuideComponent}
+  { path: 'start-guide', component: StartGuideComponent},
+  { path: 'about', component: AboutComponent},
+  { path: 'contact', component: ContactComponent }
 ];
 
 @NgModule({

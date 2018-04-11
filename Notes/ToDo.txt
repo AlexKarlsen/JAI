@@ -1,5 +1,9 @@
 To Do
-1. Make posts.component responsive (Thomas)
-2. Develop material color theme in JAI colors (Alex) Done!
-3. Add animations (Alex)
-4. Convert MarkDown to HTML (Alex) Done!
+
+Thomas: Styling the entire page
+
+Alex: 
+- Localization e.i. make the homepage available in english too
+
+When above tasks are done:
+- Deploy the homepage for alpha-testing

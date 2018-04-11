@@ -1,4 +1,4 @@
-
+<mat-card>
   <mat-list>
     <mat-list-item class="posts" *ngFor="let post of posts" [class.selected]="post === selectedPost" (click)="onSelect(post)">
       <span matLine>{{ post.fields.headline }} </span>
@@ -19,3 +19,4 @@
 
 
   </mat-list>
+</mat-card>

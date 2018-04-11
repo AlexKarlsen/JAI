@@ -1,12 +1,12 @@
 <div class="card-container">
-  <div class="card" *ngFor="let member of members">
-    <p class="card-headline">{{member.fields.name}}</p>
-    <img *ngFor="let img of member.fields.media" src="{{ img.fields.file.url }}" alt="">
-    <div class="card-text">
+  <mat-card *ngFor="let member of members">
+    <mat-card-title>{{member.fields.name}}</mat-card-title>
+    <img mat-card-image *ngFor="let img of member.fields.media" src="{{ img.fields.file.url }}" alt="">
+    <mat-card-content>
       <a href="mailto:{{member.fields.mail}}">{{member.fields.mail}}</a>
       <div *ngFor="let point of member.fields.ansvarsomrder">
           {{point}}, 
       </div>
-    </div>
-  </div>
+    </mat-card-content>
+  </mat-card>
 </div>

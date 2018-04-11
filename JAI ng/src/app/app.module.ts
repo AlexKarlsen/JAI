@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatGridListModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule, MatButtonModule, MatListModule } from '@angular/material';
+import { MatGridListModule, MatCardModule, MatMenuModule, MatToolbarModule, MatIconModule, MatButtonModule, MatListModule, MatProgressSpinnerModule } from '@angular/material';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FacebookModule } from 'ngx-facebook';
@@ -28,6 +28,8 @@ import { BoardComponent } from './board/board.component';
 import { VolunteerComponent } from './volunteer/volunteer.component';
 import { SponsorsComponent } from './sponsors/sponsors.component';
 import { StartGuideComponent } from './start-guide/start-guide.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { StartGuideComponent } from './start-guide/start-guide.component';
     BoardComponent,
     VolunteerComponent,
     SponsorsComponent,
-    StartGuideComponent
+    StartGuideComponent,
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -57,6 +61,7 @@ import { StartGuideComponent } from './start-guide/start-guide.component';
     MatIconModule,
     MatButtonModule,
     MatListModule,
+    MatProgressSpinnerModule,
     FacebookModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: environment.maps.apiKey

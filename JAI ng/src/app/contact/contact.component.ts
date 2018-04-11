@@ -2,17 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { ContentfulService } from '../services/contentful.service';
 
 @Component({
-  selector: 'app-start-guide',
-  templateUrl: './start-guide.component.html',
-  styleUrls: ['./start-guide.component.css']
+  selector: 'app-contact',
+  templateUrl: './contact.component.html',
+  styleUrls: ['./contact.component.css']
 })
-export class StartGuideComponent implements OnInit {
+export class ContactComponent implements OnInit {
 
   data;
+
   constructor(private contentfulService: ContentfulService) { }
 
   ngOnInit() {
-    this.contentfulService.getContent("4VKcY8ISU8wwqoSIqEUyK4")
+    this.contentfulService.getContent("4oh9hyhW8oiWqKsMIgu4Cc")
       .then(data => this.data = data);
   }
 
